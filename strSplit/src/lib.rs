@@ -13,7 +13,7 @@ impl Delimiter for &str {
 
 impl Delimiter for char {
     fn find_next(&self, s: &str)-> Option<(usize, usize)> {
-        s.char_indices().find(|(_, c)| c == self).map(|start| (start , start+1))
+        s.char_indices().find(|(_, c)| c == self).map(|(pos, start)| (pos , pos + 1))
     }
 }
 
